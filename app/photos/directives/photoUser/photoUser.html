@@ -1,0 +1,10 @@
+<div class="userContent">
+		
+		<div class="userInfoText">
+			<p class='userName'>{{user.ownername}}</p>
+			<p am-time-ago="user.datetaken"></p>
+			
+		</div>
+		<img ng-if='user.iconfarm>0' src="http://farm{{user.iconfarm}}.staticflickr.com/{{user.iconserver}}/buddyicons/{{user.owner}}.jpg" alt="">
+		<img ng-if='user.iconfarm===0' src="https://www.flickr.com/images/buddyicon.gif" alt="">
+</div>

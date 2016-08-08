@@ -1,0 +1,27 @@
+<div class='photoWrapper'>
+	<div class="photoContent">
+			<img class='theImage' ng-click='viewDetails(photo.id)' src="{{photo.url_z}}" alt="">
+		<div class="commentSection">
+			<div class="likes">
+				<span class='heartImage'></span>
+				{{photo.likesCount}}
+			</div>
+
+			<p class='photoDescription' ng-if='photo.description._content.length > 0' ng-bind-html="photo.description._content"></p>
+			<p class='paddingLeftCustom'  ng-if='photo.comments.length > 4'>{{photo.comments.length-3}} more comments </p>
+			<p class='paddingLeftCustom' ng-if='photo.comments.length === 4'> 1 more comment </p>
+			<div class="comment" ng-repeat='comment in photo.comments.slice(0,3)'>
+				<img class='commentatorImage' ng-if='comment.iconfarm>0' src="http://farm{{comment.iconfarm}}.staticflickr.com/{{comment.iconserver}}/buddyicons/{{comment.author}}.jpg" alt="">
+				<img class='commentatorImage' ng-if='comment.iconfarm===0' src="https://www.flickr.com/images/buddyicon.gif" alt="">
+				<p class='commentatoAuthor'>{{comment.authorname}}</p>
+				<p class='commentText' ng-bind-html="comment._content"></p>
+			</div>
+			<div class="newCommentSection">
+				<input type="text" ng-keyup="submitComment($event,photo)" class='writeComment' name="" value="" placeholder="Write comment">
+			</div>
+		</div>
+	</div>
+
+
+</div>
+

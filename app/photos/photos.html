@@ -1,0 +1,35 @@
+<div >
+	<!-- <div class="emptySearchDiv"></div>
+	<div class="searhField">
+		<div class='searches'>
+		<input type="text" placeholder='Search' id='searchField' ng-model='searchWord' />
+		<button ng-click="search(searchWord)" type="button">Search</button>
+		</div>
+	</div>
+	<button type="button" ng-click='searchPhotos()'>Bum</button>
+		<div class="emptySearchDiv"></div>
+		<p class='noResultText' ng-if='noResults'  >No results found </p> -->
+	<aside class='asideContent'>
+		<aside class="userDataContainer">
+			<photo-user userData='user' ng-repeat='user in users'></photo-user>
+		</aside>
+	</aside>
+	<div class="searchWrapper">
+		<div class="searhField">
+			<div class='searches'>
+			<input type="text" placeholder='Search' id='searchField' ng-model='searchWord' />
+			<button class='' ng-click="search(searchWord)" type="button"><span class="glyphicon glyphicon-search"></span></button>
+		</div>
+		<div  >
+			<div class="photosContainer" id='photosContainer'>
+				<photo-item photoData='photo' ng-repeat='photo in photos track by photo.id'></photo-item>
+			</div>
+		<div ng-if='requestInProgres' class="loader">
+			<img src="img/loader.gif" alt="">
+		</div>
+		<button ng-if='moreData' ng-click='loadMore(searchWord)' class='moreDataBtn' type="button">Load more</button>
+		</div>
+	</div>
+
+	</div>
+</div>

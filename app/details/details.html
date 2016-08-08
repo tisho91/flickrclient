@@ -1,0 +1,36 @@
+<div class='details'>
+	<div class="detailsPhotoWrapper">
+		<img src="{{photo.url}}" alt="">
+	</div>
+	<aside class='photoDetailsContent'>
+		<div class="detailsInfo">
+			<div class="detailsUploader">
+				<aside class='uploaderPhoto'>
+					<img src="{{photo.ownerPhoto}}" alt="">
+				</aside>
+				<div class="detailsUploaderInfo">
+					<p class='photoOwnerUsername'>{{photo.owner.username}}</p>
+					<p class='photoDateTaken'  am-time-ago="photo.dates.taken"></p>
+					<p class='detailsDescription' ng-if='photo.description._content.length > 0' ng-bind-html="photo.description._content"></p>
+				</div>
+			</div>
+			<div class="detailsComments">
+				<div class="detailsComment" ng-repeat='comment in photo.comments track by $index'>
+					<aside class="detailsCommentImage">
+						
+					<img class='detailsCommentatorIcon' ng-if='comment.iconfarm>0' src="http://farm{{comment.iconfarm}}.staticflickr.com/{{comment.iconserver}}/buddyicons/{{comment.author}}.jpg" alt="">
+					<img class='detailsCommentatorIcon' ng-if='comment.iconfarm===0' src="https://www.flickr.com/images/buddyicon.gif" alt="">
+					</aside>
+					<div class="detailsCommentInfo">
+						<p class='detailsComentAuthor'>{{comment.authorname}}</p>
+						<p class='detailsCommentText' ng-bind-html="comment._content"></p>
+					</div>
+				</div>
+			</div>
+			<div class="detailsPostComment">
+				<input type="text" name="" ng-model='newCommentText' value="" placeholder="Leave a comment">
+				<button ng-click='postComment(newCommentText)' type="button">...</button>
+			</div>
+		</div>
+	</aside>
+</div>

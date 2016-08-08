@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+
+	<script type="text/javascript" src='bower_components/angular/angular.js'></script>
+	<script type="text/javascript" src='bower_components/angular/sanitize.js'></script>
+	<script type="text/javascript" src='bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+	<script type="text/javascript" src='bower_components/angular-bootstrap/ui-bootstrap.js'></script>
+	<script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
+
+	<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js'></script>
+
+	<script type="text/javascript" src='js/external.js'></script>
+	<script type="text/javascript" src='js/moment/moment.js'></script>
+	<script type="text/javascript" src='bower_components/angular-moment/angular-moment.js'></script>
+
+	<script type="text/javascript" src='app/config.js'></script>
+	<script type="text/javascript" src='app/route-config.js'></script>
+	<script type="text/javascript" src='app/services/comments.service.js'></script>
+	<script type="text/javascript" src='app/photos/photos.controller.js'></script>
+	<script type="text/javascript" src='app/photos/photos.factory.js'></script>
+	<script type="text/javascript" src='app/photos/directives/photoItem/photoItem.directive.js'></script>
+	<script type="text/javascript" src='app/photos/directives/photoUser/photoUser.direvtive.js'></script>
+	<script type="text/javascript" src='app/details/details.controller.js'></script>
+	<script type="text/javascript" src='app/details/details.factory.js'></script>
+
+
+
+
+  
+
+</head>
+<body ng-app='flickrclient'>
+		<div ng-include="'app/includes/header.html'"></div>
+	<div class="wrapper">
+   		<div ui-view></div>
+		
+	</div>
+</body>
+</html>
